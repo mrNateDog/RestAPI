@@ -9,7 +9,7 @@ $(document).ready(function () {
         url:
           "http://api.openweathermap.org/data/2.5/weather?id=" +
           $("#citySelect").val() +
-          "&appid=cc99add73664c7a3af4a28dc0b848471",
+          "",
         data: {
           id: cityId,
         },
