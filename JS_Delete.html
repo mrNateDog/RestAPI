@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+    <title>Delete</title>
+  </head>
+  <body>
+    <script>
+      //Delete
+      fetch("https://gorest.co.in/public/v1/users/2603", {
+        method: "delete",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer 469370dd193c4c9fc4dbd019aed09405ae44ed69d986bc634fdcfd54f77c6e66",
+        },
+      })
+        .then((responsePost) => {
+          //return responsePost.json();
+          console.log(responsePost);
+        })
+        .catch((error) => console.log(error));
+    </script>
+  </body>
+</html>

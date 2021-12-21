@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>NHL Schedule</h1>
+    <p>Select the date to view the NHL's schedule games for</p>
+    <div id="dateText"></div>
+    <div id="schedule-container"></div>
+
+    <script>
+      fetch("https://statsapi.web.nhl.com/api/v1/schedule?date=2021-12-21")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          // $("#schedule-container").text(data.copyright);
+          data.dates.forEach((date) => {
+            console.log(data.dates);
+            $("#dateText").append();
+            date.games.forEach((game) => {
+              $("#schedule-container").append(game.teams.away.team.name);
+              $("#schedule-container").append(" <b> vs </b>");
+              $("#schedule-container").append(game.teams.home.team.name);
+              $("#schedule-container").append("<br/>");
+            });
+          });
+        });
+    </script>
+  </body>
+</html>

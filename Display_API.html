@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+    <title>API Test</title>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      $.get(
+        "https://statsapi.web.nhl.com/api/v1/schedule?date=2021-12-19",
+        function (data) {
+          console.log(data);
+          $("#result").text(JSON.stringify(data));
+          //alert( "Load was performed." );
+        }
+      );
+    </script>
+  </body>
+</html>
