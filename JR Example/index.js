@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#submit").click(function (e) {
     var validate = Validate();
-    let cityId = $("#citySelect").val(); 
+    let cityId = $("#citySelect").val();
     $("#message").html(validate);
     if (validate.length == 0) {
       $.ajax({
